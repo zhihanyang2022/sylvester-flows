@@ -40,7 +40,7 @@ One may be curious, why not use the 2D densities presented in the planar flow pa
 
 ### Results
 
-Final KL (with respect to ground truth distribution) against number of layers: 
+The plot below shows final KL (with respect to ground truth distribution) against number of layers (2, 8 or 16). Center of each error bar denotes the mean; the top of each error bar minus the bottom of each error bar equals 2 times the standard deviation around the mean. Each mean / standard deviation is calculated over 5 random seeds. 
 
 <p align="center">
 <img src="./sylvester_flows/saved/pngs/hd_unconditional_vi_kl_vs_nlayers.png" width="50%">
@@ -48,11 +48,11 @@ Final KL (with respect to ground truth distribution) against number of layers:
 
 Comparison between the ground truth density with learned densities:
 
-|                     Ground-truth density                     |                  Planar flow with 30 layers                  |
+|                     Ground-truth density                     |                Planar flow 30 layers (seed=1)                |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | <img src="./sylvester_flows/saved/hd_unconditional_vi/ground_truth/density.png" > | <img src="./sylvester_flows/saved/hd_unconditional_vi/planar_K32/seed1/learned_density.png"> |
 
-|        Sylvester-Orthogonal (M=9) flow with 30 layers        |       Sylvester-Householder (H=5) flow with 30 layers        |
+|      Sylvester-Orthogonal (M=9) with 30 layers (seed=1)      |     Sylvester-Householder (H=5) with 30 layers (seed=1)      |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | <img src="./sylvester_flows/saved/hd_unconditional_vi/orthogonal_K32_M9/seed1/learned_density.png"> | <img src="./sylvester_flows/saved/hd_unconditional_vi/householder_K32_H5/seed1/learned_density.png"> |
 
