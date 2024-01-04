@@ -58,6 +58,6 @@ class UnconditionalIdentitySylvesterFlow(AbstractFlow):
         return samples_from_each_layer[0]
 
     
-class ConditionalTriangularSylvesterFlow(nn.Module):
+class ConditionalIdentitySylvesterFlow(nn.Module):
 
     pass

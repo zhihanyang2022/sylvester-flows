@@ -17,6 +17,11 @@ This paper aims to **make planar flow layers more expressive** so that we don't 
 - Householder Sylvester flow: $M = D$
 - Triangular Sylvester flow: $M = D$
 
+I also created two additional Sylvester flows to showcase why (or why not) it's necessary to learn the $Q$ matrix:
+
+- Random Sylvester flow: the $Q$ matrix is set to a random orthogonal matrix (not trainable), so $M = D$
+- Identity Sylvester flow: the $Q$ matrix is set to an identity matrix (again, not trainable), so $M = D$
+
 ## Experiment: unconditional variational inference
 
 The ground truth density is a mixture of 10 spherical Gaussians in a 10-dimensional space. The mean vector of each Gaussian is generated randomly from $\[-0.5, 0.5\]^10$ (but fixed across all following runs). Below is a visualization of all the 2-dimensional marginal distributions derived from the 10-dimensional mixture of Gaussians:
@@ -30,6 +35,27 @@ This is a sanity-check experiment before running conditional variational inferen
 One may be curious, why not use the 2D densities presented in the planar flow paper? There are two main reasons: 
 - I want to witness the superior ability of sylvester flows to handle high dimensional distributions.
 - Householder reflections do not work well with 2x2 matrices (feel free to ask me about this in Issues).
+
+### Code
+
+Set current working directory to `sylvester_flows`. 
+
+For running experiments:
+
+```bash
+python hd_unconditional_vi.py [flow-type] [num-layers] [-M] [-H]
+```
+
+```bash
+python hd_unconditional_vi.py planar 30
+python hd_unconditional_vi.py orthogonal 30 -M 9
+python hd_unconditional_vi.py householder 30 -H 5
+python hd_unconditional_vi.py triangular 30
+python hd_unconditional_vi.py random 30
+python hd_unconditional_vi.py identity 30
+```
+
+For creating plots, use `hd_unconditional_vi_ground_truth.ipynb` and `hd_unconditional_vi_analysis.ipynb`. 
 
 ### Training details
 
@@ -48,11 +74,11 @@ The plot below shows final KL (with respect to ground truth distribution) agains
 
 Comparison between the ground truth density with learned densities:
 
-|                     Ground-truth density                     |                Planar flow 30 layers (seed=1)                |
+|                     Ground-truth density                     |                Planar flow 32 layers (seed=1)                |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | <img src="./sylvester_flows/saved/hd_unconditional_vi/ground_truth/density.png" > | <img src="./sylvester_flows/saved/hd_unconditional_vi/planar_K32/seed1/learned_density.png"> |
 
-|      Sylvester-Orthogonal (M=9) with 30 layers (seed=1)      |     Sylvester-Householder (H=5) with 30 layers (seed=1)      |
+|      Sylvester-Orthogonal (M=9) with 32 layers (seed=1)      |     Sylvester-Householder (H=5) with 32 layers (seed=1)      |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | <img src="./sylvester_flows/saved/hd_unconditional_vi/orthogonal_K32_M9/seed1/learned_density.png"> | <img src="./sylvester_flows/saved/hd_unconditional_vi/householder_K32_H5/seed1/learned_density.png"> |
 

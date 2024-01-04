@@ -60,6 +60,6 @@ class UnconditionalRandomSylvesterFlow(nn.Module):
         return samples_from_each_layer[0]
 
     
-class ConditionalTriangularSylvesterFlow(nn.Module):
+class ConditionalRandomSylvesterFlow(nn.Module):
 
     pass
