@@ -1,5 +1,7 @@
 # Sylvester normalizing flows
 
+_One key problem of planar flow and Sylvester flows alike is that they can only be used for variational inference but not for density estimation given a dataset (this is because they cannot evaluate the log probability of a data point)._
+
 This is a demo PyTorch repository for "Sylvester Normalizing Flows for Variational Inference" (UAI 2018).
 
 ```bibtex
