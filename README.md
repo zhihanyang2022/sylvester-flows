@@ -21,11 +21,15 @@ This paper aims to **make planar flow layers more expressive** so that we don't 
 
 The ground truth density is a mixture of 10 spherical Gaussians in a 10-dimensional space. The mean vector of each Gaussian is generated randomly from $\[-0.5, 0.5\]^10$ (but fixed across all following runs). Below is a visualization of all the 2-dimensional marginal distributions derived from the 10-dimensional mixture of Gaussians:
 
-<img src="./sylvester_flows/saved/hd_unconditional_vi/ground_truth/density.png" width=50% align="center">
+<p align="center">
+<img src="./sylvester_flows/saved/hd_unconditional_vi/ground_truth/density.png" width=50%">
+</p>
 
 This is a sanity-check experiment before running conditional variational inference, which is required for training VAEs. 
 
-One may be curious, why not use the 2D densities presented in the planar flow paper? There are two main reasons: (1) I want to witness the superior ability of sylvester flows to handle high dimensional distributions. (2) Householder reflections do not work well with 2x2 matrices (feel free to ask me about this in Issues).
+One may be curious, why not use the 2D densities presented in the planar flow paper? There are two main reasons: 
+- I want to witness the superior ability of sylvester flows to handle high dimensional distributions.
+- Householder reflections do not work well with 2x2 matrices (feel free to ask me about this in Issues).
 
 ### Training details
 
@@ -38,7 +42,9 @@ One may be curious, why not use the 2D densities presented in the planar flow pa
 
 Final KL (with respect to ground truth distribution) against number of layers: 
 
-<img src="./sylvester_flows/saved/pngs/hd_unconditional_vi_kl_vs_nlayers.png" width="50%" align="center">
+<p align="center">
+<img src="./sylvester_flows/saved/pngs/hd_unconditional_vi_kl_vs_nlayers.png" width="50%">
+</p>
 
 Comparison between the ground truth density with learned densities:
 
