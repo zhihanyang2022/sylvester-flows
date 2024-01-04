@@ -74,6 +74,11 @@ The plot below shows final KL (with respect to ground truth distribution) agains
 <img src="./sylvester_flows/saved/pngs/hd_unconditional_vi_kl_vs_nlayers.png" width="50%">
 </p>
 
+A few key observations:
+
+- Orthogonal and Householder perform the best, especially when $K=32$. This is perhaps not surprisingly as they have the most amount of learnable parameters per layer.
+- Sylvester flows with 8 layers can do just as well as (or a bit better than) planar flows with 32 layers. I observed that training the prior is much faster than training the latter in terms of run time.
+
 Comparison between the ground truth density with learned densities:
 
 |                     Ground-truth density                     |                Planar flow 32 layers (seed=1)                |
