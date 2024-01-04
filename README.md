@@ -1,10 +1,8 @@
 # Sylvester normalizing flows
 
-```diff
-- One key problem of planar flow and Sylvester flows alike is that they can only be used for variational inference but not for density estimation given a dataset. This is because they can only evaluate the log likelihood of a data point while generating that data point; they cannot evaluate the log likelihood of a data point from, for example, a collected dataset. This, in turn, is because they are invertible but have no analytic inverses. 
+_One key problem of planar flow and Sylvester flows alike is that they can only be used for variational inference but not for density estimation given a dataset. This is because they can only evaluate the log likelihood of a data point while generating that data point; they cannot evaluate the log likelihood of a data point from, for example, a collected dataset. This, in turn, is because they are invertible but have no analytic inverses._
 
-+ Another line of works on flow, like NICE and RealNVP, doesn't suffer from this problem. However, these flows use simpler transformations that have analytic inverses, which may be less expressive (I'm not exactly sure but this is my hypothesis, since these flows have simple triangular Jacobians while planar and Sylvester flows have much more complex Jacobians).
-```
+_Another line of works on flow, like NICE and RealNVP, doesn't suffer from this problem. However, these flows use simpler transformations that have analytic inverses, which may be less expressive (I'm not exactly sure but this is my hypothesis, since these flows have simple triangular Jacobians while planar and Sylvester flows have much more complex Jacobians)._
 
 This is a demo PyTorch repository for "Sylvester Normalizing Flows for Variational Inference" (UAI 2018).
 
