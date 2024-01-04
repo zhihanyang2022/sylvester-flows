@@ -24,7 +24,7 @@ I also created two additional Sylvester flows to showcase why (or why not) it's 
 
 ## Experiment: unconditional variational inference
 
-The ground truth density is a mixture of 10 spherical Gaussians in a 10-dimensional space. The mean vector of each Gaussian is generated randomly from $\[-0.5, 0.5\]^10$ (but fixed across all following runs). Below is a visualization of all the 2-dimensional marginal distributions derived from the 10-dimensional mixture of Gaussians:
+The ground truth density is a mixture of 10 spherical Gaussians in a 10-dimensional space. The mean vector of each Gaussian is generated randomly from $\[-0.5, 0.5\]^{10}$ (but fixed across all following runs). Below is a visualization of all the 2-dimensional marginal distributions derived from the 10-dimensional mixture of Gaussians:
 
 <p align="center">
 <img src="./sylvester_flows/saved/hd_unconditional_vi/ground_truth/density.png" width=50%">
