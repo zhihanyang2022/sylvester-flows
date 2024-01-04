@@ -40,6 +40,8 @@ One may be curious, why not use the 2D densities presented in the planar flow pa
 
 Set current working directory to `sylvester_flows`. 
 
+For checking (1) the logabsdet computation and (2) matrix shapes, run `test_core.py`. 
+
 For running experiments:
 
 ```bash
