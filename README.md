@@ -22,7 +22,9 @@ I also created two additional Sylvester flows to showcase why (or why not) it's 
 - Random Sylvester flow: the $Q$ matrix is set to a random orthogonal matrix (not trainable), so $M = D$
 - Identity Sylvester flow: the $Q$ matrix is set to an identity matrix (again, not trainable), so $M = D$
 
-**Personal take.** One key problem of planar flow and Sylvester flows alike is that they can only be used for variational inference but not for density estimation given a dataset. This is because they can only evaluate the log likelihood of a data point while generating that data point; they cannot evaluate the log likelihood of a data point from, for example, a collected dataset. This, in turn, is because they are invertible but have no analytic inverses. Another line of works on flow, like NICE and RealNVP, doesn't suffer from this problem. However, these flows use simpler transformations that have analytic inverses, which may be less expressive (I'm not exactly sure but this is my hypothesis, since these flows have simple triangular Jacobians while planar and Sylvester flows have much more complex Jacobians).
+**Personal take.** One key problem of planar flow and Sylvester flows alike is that they can only be used for variational inference but not for density estimation given a dataset. This is because they can only evaluate the log likelihood of a data point while generating that data point; they cannot evaluate the log likelihood of a data point from, for example, a collected dataset. This, in turn, is because they are invertible but have no analytic inverses. 
+
+Another line of works on flow, like NICE and RealNVP, doesn't suffer from this problem. However, these flows use simpler transformations that have analytic inverses, which may be less expressive (I'm not exactly sure but this is my hypothesis, since these flows have simple triangular Jacobians while planar and Sylvester flows have much more complex Jacobians).
 
 ## Experiment: unconditional variational inference
 
