@@ -13,7 +13,7 @@ This is a demo PyTorch repository for "Sylvester Normalizing Flows for Variation
 
 This paper aims to **make planar flow layers more expressive** so that we don't need a ton of layers to perform variational inference for complex, high-dimensional densities. On a high level, a planar flow layer squeezes samples of size $D$ through a bottleneck of size 1, while a sylvester transformation squeezes samples of size $D$ through a bottleneck of size $M$:
 
-- Orthogonal Sylvester flow: $1 \leq M \leq D$
+- Orthogonal Sylvester flow: $1 \leq M < D$
 - Householder Sylvester flow: $M = D$
 - Triangular Sylvester flow: $M = D$
 
