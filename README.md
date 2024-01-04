@@ -52,7 +52,7 @@ Comparison between the ground truth density with learned densities:
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | <img src="./sylvester_flows/saved/hd_unconditional_vi/ground_truth/density.png" > | <img src="./sylvester_flows/saved/hd_unconditional_vi/planar_K32/seed1/learned_density.png"> |
 
-|       Sylvester-Orthogonal ($M=9$) flow with 30 layers       |      Sylvester-Householder ($H=5$) flow with 30 layers       |
+|        Sylvester-Orthogonal (M=9) flow with 30 layers        |       Sylvester-Householder (H=5) flow with 30 layers        |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | <img src="./sylvester_flows/saved/hd_unconditional_vi/orthogonal_K32_M9/seed1/learned_density.png"> | <img src="./sylvester_flows/saved/hd_unconditional_vi/householder_K32_H5/seed1/learned_density.png"> |
 
